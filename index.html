@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Salud e IMC</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero__wave"></div>
+
+    <nav class="nav container">
+      <figure class="nav__logo">
+        <img src="images/logo.svg" class="nav__img">
+      </figure>
+
+      <div class="nav__links">
+        <a href="#" class="nav__link">Bienestar</a>
+        <a href="#" class="nav__link">Nutrición</a>
+        <a href="#" class="nav__link">Iniciar Sesión</a>
+      </div>
+    </nav>
+
+    <section class="hero__main container">
+      <img src="images/illustration-intro.png" class="hero__img">
+
+      <h1 class="hero__title"> Todos tus datos de salud en un lugar seguro, accesible en cualquier lugar.</h1>
+
+      <section class="imc container">
+        <h2 class="imc__title">Calcula tu Índice de Masa Corporal</h2>
+        <form id="imcForm">
+          <label for="peso">Peso (en kilogramos):</label>
+          <input type="number" id="peso" required>
+          <label for="altura">Altura (en metros):</label>
+          <input type="number" id="altura" step="0.01" required>
+          <input type="submit" value="Calcular IMC">
+        </form>
+        <p id="resultado"></p>
+      </section>
+
+      <p class="hero__paragraph">
+        Almacena todos tus datos de salud más importantes en un lugar seguro. Accede a ellos donde quiera que necesites, comparte y colabora con amigos, familia y compañeros de trabajo.
+      </p>
+
+      <a href="#" class="hero__cta">Comenzar</a>
+    </section>
+  </header>
+
+  <!-- Resto del código HTML -->
+
+</body>
+
+
+
+  <script>
+    document.getElementById('imcForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var peso = document.getElementById('peso').value;
+  var altura = document.getElementById('altura').value;
+  var imc = peso / (altura * altura);
+  document.getElementById('resultado').innerHTML = 'Tu IMC es ' + imc.toFixed(2);
+});
+  </script>
+
+
+</html>
